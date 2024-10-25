@@ -1,3 +1,3 @@
 # gregorcjaka_solski_repozitorij
-Jaka Gregorc
+Jaka Gregorc  
 23221129
