@@ -1,3 +1,3 @@
-# gregorcjaka_solski_repozitorij
+# Podatki
 Jaka Gregorc  
 23221129
