@@ -1,0 +1,1 @@
+# gregorcjaka_solski_repozitorij
