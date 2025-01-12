@@ -141,7 +141,7 @@ int main() {
 
   auto end_time = std::chrono::high_resolution_clock::now();
   std::chrono::duration<double> time_duration = end_time - start_time;
-  std::cout << "Time of Gauss-Seidel: " << time_duration.count() << " seconds" << std::endl;
+  std::cout << "Cas Gauss-Seidela: " << time_duration.count() << " sekund" << std::endl;
   
   // Za izpis maksimalne vrednosti
   double max_T = 0;
@@ -153,8 +153,8 @@ int main() {
 	max_T =T[iiT];
       }
     }
-  std::cout << "Serial Time: " << time_duration.count() << " seconds" << std::endl;
-  cout << "Max. temperature: " << max_T << " degree C." << endl;
+  std::cout << "Cas: " << time_duration.count() << " sekund" << std::endl;
+  cout << "Max. temperatura: " << max_T << " stopinj C." << endl;
   
   return 0;
 }
