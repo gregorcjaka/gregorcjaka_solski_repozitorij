@@ -158,7 +158,7 @@ int main() {
   
   return 0;
 
-	/*
+/*
    KOMENTAR NA PARALELIZACIJO GAUSS SEIDLOVE METODE: Metoda Gauss Seidl je iterativna metoda. Glavni pomen iterativnih metod je, da vsako
    novo iteracijo izračunajo nov približek rezultata, ki je nekoliko boljši od prejšnjega. Metoda se konča po max iteracijah, ali pa kadar je
    razlika med novim in starim rezultatom znotraj meje, ki jo določimo sami. Pri tem opisu še ne naletimo na probleme pri paralelizaciji.
