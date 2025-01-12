@@ -158,13 +158,16 @@ int main() {
   
   return 0;
 
-  // KOMENTAR NA PARALELIZACIJO GAUSS SEIDLOVE METODE: Metoda Gauss Seidl je iterativna metoda. Glavni pomen iterativnih metod je, da vsako
-  // novo iteracijo izračunajo nov približek rezultata, ki je nekoliko boljši od prejšnjega. Metoda se konča po max iteracijah, ali pa kadar je
-  // razlika med novim in starim rezultatom znotraj meje, ki jo določimo sami. To je vse lepo in prav, ampak če želimo tako metodo paralelizirati pa 
-  // naletimo na problem. Sicer v iterativnih metodah je vsak nov rezultat ODVISEN od prejšnjega. Torej za računanje trenutne iteracije uporabimo
-  // rezultat iz prejšnje iteracije. To se direktno ne sklada s paralelizacijo, saj jo lahko uporabimo za hkratno reševanje med seboj neodvisnih 
-  // problemov, kar iterativne metode zaradi njihove narave to niso. Po nekaj raziskovanja po spletu sem odkril, da če bi res želel paralelizirati
-  // kodo, bi lahko spisal ali Jacobijevo metodo reševanja matrik (vir: https://arxiv.org/pdf/1403.5805.), ali pa uporabil neke napredne
-  // metode za paraleliziranje, kot je npr. graph coloring(vir: https://www.osti.gov/servlets/purl/1246285.).
-  // Torej po mojem mnenju se Gauss Seidlove metode kot take ne da paralelizirati.
-}
+	/*
+   KOMENTAR NA PARALELIZACIJO GAUSS SEIDLOVE METODE: Metoda Gauss Seidl je iterativna metoda. Glavni pomen iterativnih metod je, da vsako
+   novo iteracijo izračunajo nov približek rezultata, ki je nekoliko boljši od prejšnjega. Metoda se konča po max iteracijah, ali pa kadar je
+   razlika med novim in starim rezultatom znotraj meje, ki jo določimo sami. Pri tem opisu še ne naletimo na probleme pri paralelizaciji.
+   Nadaljno moramo razmisliti o lastnostih metode Gauss-Seidl. Glavna značilnost je, da pri tej iterativni metodi uporabimo za izračun
+   novih vrednosti, vrednosti iz stare in iz TRENUTNE ITERACIJE računanja. Pri drugem delu te definicije naletimo na problem. Brez težav
+   lahko paraleliziramo metodo, ki upošteva le vrednosti iz prejšnje iteracije. Lep primer te je npr. Jacobijeva metoda reševanja,
+   ki je sicer zelo podobna Gauss-Seidlovi, ampak zaradi upoštevanja le prejšnje iteracije nima problema s paralelizacijo (vir: https://arxiv.org/pdf/1403.5805.). 
+   Ker pri Gauss-Seidlu uporabimo vrendnosti iz te paralelizacije, pa je logično, da paraleliziranja ne moremo izvest(threadi si ne morejo razdeliti dela in podajati
+   novih vrednosti drugemu threadu, prav tistemu, ki te vrednosti potrebuje...). Po nekaj brskanja po spletu sem sicer našel načine, da se tudi
+   metodo Gauss-Seidl da paralelizirati, vendar so za to uporabljene neke precej napredne metode kot npr. graph coloring(vir: https://www.osti.gov/servlets/purl/1246285.).
+   Torej po mojem mnenju se metode Gauss-Seidl ne da enostavno paralelizirati. 
+*/
